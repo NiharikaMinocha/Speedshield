@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-07-10T19:09:47 AEST" name="Suite" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7619">
+    <groups>
+    </groups>
+    <test started-at="2021-07-10T19:09:47 AEST" name="SpeedshieldAssessment" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7619">
+      <class name="Speedshield.MavenEclipseProject.TestCase1">
+        <test-method is-config="true" signature="setupApplication(java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:42 AEST" name="setupApplication" finished-at="2021-07-10T19:09:47 AEST" duration-ms="4848" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://staging.fleetonline.net]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApplication -->
+        <test-method signature="TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:47 AEST" name="TC1_Update_Operator_Personnal_Number" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7586" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test_141@sst.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass123!]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Operator]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Card1236]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1236]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Operator Details updated successfully.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1_Update_Operator_Personnal_Number -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:54 AEST" name="getResult" finished-at="2021-07-10T19:09:54 AEST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC1_Update_Operator_Personnal_Number status=SUCCESS method=TestCase1.TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:54 AEST" name="closeApplication" finished-at="2021-07-10T19:09:55 AEST" duration-ms="342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- Speedshield.MavenEclipseProject.TestCase1 -->
+    </test> <!-- SpeedshieldAssessment -->
+  </suite> <!-- Suite -->
+</testng-results>

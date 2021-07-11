@@ -65,7 +65,7 @@ public class BaseClass
 	public String captureScreen() throws IOException {
 		TakesScreenshot screen = (TakesScreenshot) driver;
 		File src = screen.getScreenshotAs(OutputType.FILE);
-		String dest ="C:\\Users\\nihar\\git\\Framework1\\SpeedshieldAssessment\\test-output\\Screenshots"+getcurrentdateandtime()+".png";
+		String dest =System.getProperty("user.dir")+"\\test-output\\Screenshots\\Screenshot"+getcurrentdateandtime()+".png";
 		File target = new File(dest);
 		FileUtils.copyFile(src, target);
 		return dest;

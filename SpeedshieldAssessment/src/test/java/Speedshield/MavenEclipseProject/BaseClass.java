@@ -86,13 +86,14 @@ return str;
 }
 	
 	@AfterMethod
-    public void getResult(ITestResult result)
+    public void getResult(ITestResult result) throws IOException
     {
 		//Extent report Color Setup and Exception Reporting
         if(result.getStatus() == ITestResult.FAILURE)
         {
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
             test.fail(result.getThrowable());
+            test.log(Status.INFO, "Failure Screenshot").addScreenCaptureFromPath(captureScreen());
         }
         else if(result.getStatus() == ITestResult.SUCCESS)
         {
@@ -102,6 +103,7 @@ return str;
         {
             test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test Case SKIPPED", ExtentColor.ORANGE));
             test.skip(result.getThrowable());
+            test.log(Status.INFO, "Skipped Step Screenshot").addScreenCaptureFromPath(captureScreen());
         }
     }
 	

@@ -8,11 +8,13 @@
     <parameter name="PersonnelNumber" value="1236"/>
     <parameter name="FirstName" value="Operator"/>
     <parameter name="ExpectedSuccessMessage" value="Operator Details updated successfully."/>
+    <parameter name="VerticalScroll" value="400"/>
     <parameter name="LastName" value="Card1236"/>
     <classes>
       <class name="Speedshield.MavenEclipseProject.TestCase1">
         <methods>
           <include name="setupApplication"/>
+          <include name="captureScreen"/>
           <include name="TC1_Update_Operator_Personnal_Number" invocation-numbers="0"/>
           <include name="closeApplication"/>
           <include name="getResult"/>

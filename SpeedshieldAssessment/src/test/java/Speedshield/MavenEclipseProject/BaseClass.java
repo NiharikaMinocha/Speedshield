@@ -30,11 +30,11 @@ import java.text.SimpleDateFormat;
 
 public class BaseClass 
 {
-            
+
 	WebDriver driver;
 	public static ExtentSparkReporter htmlReporter;
-    public static ExtentReports extent;
-    public static ExtentTest test;
+	public static ExtentReports extent;
+	public static ExtentTest test;
 	@Parameters({"URL"})	
 	@BeforeSuite
 	public void setupApplication(String URL) throws UnknownHostException
@@ -52,16 +52,18 @@ public class BaseClass
 		htmlReporter.config().setDocumentTitle("Speedshield Technologies Report");
 		htmlReporter.config().setReportName("Speedshield Technologies");
 		htmlReporter.config().setTheme(Theme.STANDARD);
-		
+
 		//Webdriver setup
 		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-        driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);		
+		driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);		
 		driver.manage().window().maximize();
 		driver.get(URL);
-				
+
 	}
-	@AfterMethod
+
+
+	//Screenshot code
 	public String captureScreen() throws IOException {
 		TakesScreenshot screen = (TakesScreenshot) driver;
 		File src = screen.getScreenshotAs(OutputType.FILE);
@@ -70,53 +72,53 @@ public class BaseClass
 		FileUtils.copyFile(src, target);
 		return dest;
 	}
-	
-public String getcurrentdateandtime(){
-String str = null;
-try{
-DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
-Date date = new Date();
-str= dateFormat.format(date);
-str = str.replace(" ", "").replaceAll("/", "").replaceAll(":", "");
-}
-catch(Exception e){
 
-}
-return str;
-}
-	
+	public String getcurrentdateandtime(){
+		String str = null;
+		try{
+			DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
+			Date date = new Date();
+			str= dateFormat.format(date);
+			str = str.replace(" ", "").replaceAll("/", "").replaceAll(":", "");
+		}
+		catch(Exception e){
+
+		}
+		return str;
+	}
+
 	@AfterMethod
-    public void getResult(ITestResult result) throws IOException
-    {
+	public void getResult(ITestResult result) throws IOException
+	{
 		//Extent report Color Setup and Exception Reporting
-        if(result.getStatus() == ITestResult.FAILURE)
-        {
-            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
-            test.fail(result.getThrowable());
-            test.log(Status.INFO, "Failure Screenshot").addScreenCaptureFromPath(captureScreen());
-        }
-        else if(result.getStatus() == ITestResult.SUCCESS)
-        {
-            test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
-        }
-        else
-        {
-            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test Case SKIPPED", ExtentColor.ORANGE));
-            test.skip(result.getThrowable());
-            test.log(Status.INFO, "Skipped Step Screenshot").addScreenCaptureFromPath(captureScreen());
-        }
-    }
-	
+		if(result.getStatus() == ITestResult.FAILURE)
+		{
+			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
+			test.fail(result.getThrowable());
+			test.log(Status.INFO, "Failure Screenshot").addScreenCaptureFromPath(captureScreen());
+		}
+		else if(result.getStatus() == ITestResult.SUCCESS)
+		{
+			test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
+		}
+		else
+		{
+			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test Case SKIPPED", ExtentColor.ORANGE));
+			test.skip(result.getThrowable());
+			test.log(Status.INFO, "Skipped Step Screenshot").addScreenCaptureFromPath(captureScreen());
+		}
+	}
+
 	@AfterSuite
 	public void closeApplication()
 	{
 		//close browser
 		driver.quit();
-		
+
 		extent.flush();
-			
+
 	}
-	
-	
-	
+
+
+
 }

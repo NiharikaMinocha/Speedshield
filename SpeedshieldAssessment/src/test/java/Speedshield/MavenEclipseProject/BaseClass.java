@@ -1,6 +1,10 @@
 package Speedshield.MavenEclipseProject;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -16,8 +20,13 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.markuputils.ExtentColor;
+
+import java.io.File;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class BaseClass 
 {
@@ -52,6 +61,29 @@ public class BaseClass
 		driver.get(URL);
 				
 	}
+	@AfterMethod
+	public String captureScreen() throws IOException {
+		TakesScreenshot screen = (TakesScreenshot) driver;
+		File src = screen.getScreenshotAs(OutputType.FILE);
+		String dest ="C:\\Users\\nihar\\git\\Framework1\\SpeedshieldAssessment\\test-output\\Screenshots"+getcurrentdateandtime()+".png";
+		File target = new File(dest);
+		FileUtils.copyFile(src, target);
+		return dest;
+	}
+	
+public String getcurrentdateandtime(){
+String str = null;
+try{
+DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
+Date date = new Date();
+str= dateFormat.format(date);
+str = str.replace(" ", "").replaceAll("/", "").replaceAll(":", "");
+}
+catch(Exception e){
+
+}
+return str;
+}
 	
 	@AfterMethod
     public void getResult(ITestResult result)

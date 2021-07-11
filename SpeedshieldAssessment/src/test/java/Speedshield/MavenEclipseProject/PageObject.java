@@ -1,4 +1,6 @@
 package Speedshield.MavenEclipseProject;
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,18 +19,18 @@ public class PageObject extends BaseClass {
 	    	driver.findElement(By.id("okBtn")).click();
 	    }
 	 
-	 public void Login(String UserName, String Password) throws InterruptedException 
+	 public void Login(String UserName, String Password) throws InterruptedException, IOException 
 	    {
 	    	driver.findElement(By.id("tbUsername")).sendKeys(UserName);
 	    	driver.findElement(By.id("tbPassword")).sendKeys(Password);
 	    	driver.findElement(By.id("btnSignIn")).click();
-	    	test.log(Status.PASS, "Login Success");
+	    	test.log(Status.PASS, "Login Success").addScreenCaptureFromPath(captureScreen());
 	    	
 	    }
-	 public void ScrollDown() throws InterruptedException 
+	 public void VerticalScroll(int VerticalScroll) throws InterruptedException 
 	    {
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("window.scrollBy(0,200)");		 
+		 js.executeScript("window.scrollBy(0,"+VerticalScroll+")");		 
 	    } 
 	 public void Filter(String FirstName, String LastName )
 	    {
@@ -36,7 +38,7 @@ public class PageObject extends BaseClass {
 	    	driver.findElement(By.xpath("//input[@id='tbSearch0_2']")).sendKeys(LastName);
 	    	
 	    }
-	 public void FilterValidation (String FirstName, String LastName) throws InterruptedException
+	 public void FilterValidation (String FirstName, String LastName) throws InterruptedException, IOException
 	  {
 	 Thread.sleep(2000);
 	 String FirstNameFilter= driver.findElement(By.xpath("//tbody/tr[1]/td[1]")).getText();
@@ -44,7 +46,7 @@ public class PageObject extends BaseClass {
      
      Assert.assertEquals(FirstNameFilter,FirstName);
      Assert.assertEquals(LastNameFilter,LastName);  
-     test.log(Status.PASS, "Successfully filtered with the FirstName and LastName provided");
+     test.log(Status.PASS, "Successfully filtered with the FirstName and LastName provided").addScreenCaptureFromPath(captureScreen());
 	  }
 	 public void SelectOperator()
 	    {
@@ -56,12 +58,13 @@ public class PageObject extends BaseClass {
 		 driver.findElement(By.xpath("//input[@id='tbPersonnelNumber']")).sendKeys(PersonnelNumber);
 		 driver.findElement(By.xpath("//input[@id='btnUpdateOperatorDetails']")).click();
 	    }
-	 public void SuccessMessageValidation(String ExpectedSuccessMessage, String PersonnelNumber, String FirstName, String LastName) throws InterruptedException
+	 public void SuccessMessageValidation(String ExpectedSuccessMessage, String PersonnelNumber, String FirstName, String LastName) throws InterruptedException, IOException
 	    {
+		 test.log(Status.INFO, "proceed prompt").addScreenCaptureFromPath(captureScreen());
 		 driver.findElement(By.xpath("//input[@id='btnUpdateYes']")).click();
 		 String ActualMessage= driver.findElement(By.xpath("//p[@id='pStatusOperaterDetails']")).getText();
 		 Assert.assertEquals(ActualMessage,ExpectedSuccessMessage);
-		 test.log(Status.PASS, "Successfully Updated Personnel Number to : "+PersonnelNumber+" for "+FirstName+" "+LastName);
+		 test.log(Status.PASS, "Successfully Updated Personnel Number to : "+PersonnelNumber+" for "+FirstName+" "+LastName).addScreenCaptureFromPath(captureScreen());
 	    }
 	 
 	 

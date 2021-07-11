@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-10T19:09:47 AEST" name="Suite" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7619">
+  <suite started-at="2021-07-11T12:43:44 AEST" name="Suite" finished-at="2021-07-11T12:43:53 AEST" duration-ms="9103">
     <groups>
     </groups>
-    <test started-at="2021-07-10T19:09:47 AEST" name="SpeedshieldAssessment" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7619">
+    <test started-at="2021-07-11T12:43:44 AEST" name="SpeedshieldAssessment" finished-at="2021-07-11T12:43:53 AEST" duration-ms="9103">
       <class name="Speedshield.MavenEclipseProject.TestCase1">
-        <test-method is-config="true" signature="setupApplication(java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:42 AEST" name="setupApplication" finished-at="2021-07-10T19:09:47 AEST" duration-ms="4848" status="PASS">
+        <test-method is-config="true" signature="setupApplication(java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6]" started-at="2021-07-11T12:43:38 AEST" name="setupApplication" finished-at="2021-07-11T12:43:44 AEST" duration-ms="5623" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupApplication -->
-        <test-method signature="TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:47 AEST" name="TC1_Update_Operator_Personnal_Number" finished-at="2021-07-10T19:09:54 AEST" duration-ms="7586" status="PASS">
+        <test-method signature="TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6]" started-at="2021-07-11T12:43:44 AEST" name="TC1_Update_Operator_Personnal_Number" finished-at="2021-07-11T12:43:53 AEST" duration-ms="8860" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,22 +50,31 @@
                 <![CDATA[Operator Details updated successfully.]]>
               </value>
             </param>
+            <param index="6">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC1_Update_Operator_Personnal_Number -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:54 AEST" name="getResult" finished-at="2021-07-10T19:09:54 AEST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="captureScreen()[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6]" started-at="2021-07-11T12:43:53 AEST" name="captureScreen" finished-at="2021-07-11T12:43:53 AEST" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreen -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6]" started-at="2021-07-11T12:43:53 AEST" name="getResult" finished-at="2021-07-11T12:43:53 AEST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC1_Update_Operator_Personnal_Number status=SUCCESS method=TestCase1.TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40] output={null}]]]>
+                <![CDATA[[TestResult name=TC1_Update_Operator_Personnal_Number status=SUCCESS method=TestCase1.TC1_Update_Operator_Personnal_Number(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@e350b40]" started-at="2021-07-10T19:09:54 AEST" name="closeApplication" finished-at="2021-07-10T19:09:55 AEST" duration-ms="342" status="PASS">
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:Speedshield.MavenEclipseProject.TestCase1@2794eab6]" started-at="2021-07-11T12:43:53 AEST" name="closeApplication" finished-at="2021-07-11T12:43:53 AEST" duration-ms="400" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->

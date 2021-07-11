@@ -10,6 +10,7 @@
   <parameter name="LastName" value="Card1236"/>
   <parameter name="PersonnelNumber" value="1236"/>
   <parameter name="ExpectedSuccessMessage" value="Operator Details updated successfully."/>
+  <parameter name="VerticalScroll" value="400"/>
     <classes>
       <class name="Speedshield.MavenEclipseProject.TestCase1"/>
     </classes>
